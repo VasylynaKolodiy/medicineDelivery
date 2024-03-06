@@ -22,3 +22,5 @@ dist-ssr
 *.sln
 *.sw?
 /.idea
+/api/.env
+/client/.env

@@ -4,11 +4,13 @@ import {LIMIT} from '../../constants'
 
 type FetchBaseQueryMeta = { request: Request; response?: Response }
 
+const API_URL = import.meta.env.VITE_API_BASE_URL
+
 export const productsApi = createApi({
 
   reducerPath: 'products/Api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5222/api',
+    baseUrl: API_URL,
   }),
 
   endpoints: build => ({
@@ -33,19 +35,10 @@ export const productsApi = createApi({
       }
     }),
 
-    editBasket: build.mutation({
-      query: (body) => ({
-        url: `/users/${body.id}`,
-        method: 'PATCH',
-        body
-      })
-    }),
-
   })
 })
 export const {
   useGetProductsQuery,
   useGetCategoriesQuery,
   useFilterProductsByCategoryQuery,
-  useEditBasketMutation,
 } = productsApi
