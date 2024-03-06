@@ -1,0 +1,20 @@
+.basket{
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  .form{
+    &__item{
+      h3{
+        text-align: left;
+      }
+      margin-bottom: 24px;
+      .MuiTextField-root{
+        width: 100%;
+      }
+    }
+  }
+  &__items{
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}

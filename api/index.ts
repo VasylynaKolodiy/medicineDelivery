@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const productsRouter = require('./routers/product');
 const shopsRouter = require('./routers/shop');
+const orderRouter = require('./routers/order');
 const cors = require("cors");
 const cookieParser = require('cookie-parser')
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 app.use("/api/products", productsRouter);
 app.use("/api/shops", shopsRouter);
+app.use("/api/orders", orderRouter);
 
 
 const start = async () => {

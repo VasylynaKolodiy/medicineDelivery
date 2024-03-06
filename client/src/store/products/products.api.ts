@@ -34,11 +34,18 @@ export const productsApi = createApi({
         return {data: response, totalCount: (meta.response?.headers.get('X-Total-Count'))}
       }
     }),
-
+    saveOrder: build.mutation({
+      query: (body) => ({
+        url: 'orders',
+        method: 'POST',
+        body
+      }),
+    })
   })
 })
 export const {
   useGetProductsQuery,
   useGetCategoriesQuery,
   useFilterProductsByCategoryQuery,
+  useSaveOrderMutation
 } = productsApi
