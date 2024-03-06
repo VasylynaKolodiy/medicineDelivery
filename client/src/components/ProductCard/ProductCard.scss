@@ -1,0 +1,127 @@
+.productCard {
+  border: 1px solid #EAEAEA;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+
+  :hover {
+    .productCard__image:first-of-type{
+      opacity: 0;
+    }
+
+    .productCard__image:last-of-type {
+      opacity: 1;
+    }
+  }
+
+  &__images {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    flex: none;
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image:last-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: 1s linear;
+  }
+
+
+  &__image:first-of-type {
+    opacity: 1;
+    transition: 1s linear;
+  }
+
+
+  &__inner {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__info {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-size: 18px;
+    color: #363636;
+  }
+
+  &__category {
+    color: darkgray;
+    transition: .3s linear;
+    font-size: 14px;
+    padding-bottom: 3px;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover{
+      color: black;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+  }
+
+  &__inBasket{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    & a {
+      color: black;
+    }
+  }
+
+  &__inBasket svg {
+    width: 35px;
+    height: 35px;
+  }
+}

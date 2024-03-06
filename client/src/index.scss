@@ -1,0 +1,51 @@
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  background-size: cover;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  font-style: normal;
+  padding-right: 0 !important;
+  overflow: visible !important;
+}
+
+ul, ol{
+  margin: 20px;
+  padding: revert;
+}
+
+p{
+ margin-bottom: 20px;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+img {
+  display: inline-block;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 50px 75px;
+  margin: 0 auto;
+}
+
+.App {
+  text-align: center;
+  padding-top: 100px;
+}
