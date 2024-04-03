@@ -21,8 +21,7 @@ In the command line (terminal) go to the folder api:
     npm run nodemon
 ```
 
-
-**Medicine Delivery app**
+## Medicine Delivery app
 
 ### Overview:
 There are three complexity levels: base, middle and advanced.
@@ -44,13 +43,14 @@ preferred design style.
 - Use any relational or non-relational database.
 
 ### Base level:
-Drug stores page:
+
+#### Drug stores page:
 
 ![image](https://github.com/VasylynaKolodiy/medicineDelivery/assets/106997950/833e450a-c702-42a2-975b-a52f8860833c)
 
 The page where users can choose a drug store, then add medicines to the cart (get data from the database)
 
-Shopping cart page:
+#### Shopping cart page:
 
 ![image](https://github.com/VasylynaKolodiy/medicineDelivery/assets/106997950/48aac16d-9a22-4a91-9cb0-a78e418263c4)
 
@@ -61,19 +61,22 @@ inputs)
 button
 
 ### Middle level:
-Drug stores page:
+
+#### Drug stores page:
 - Everything from the base level
 - Add the ability to sort medicines by price and/or date added
-- Add the ability to mark medicines as favorites. The following drugs should be
-displayed first when sorting
-Shopping cart page:
+- Add the ability to mark medicines as favorites. The following drugs should be displayed first when sorting
+
+#### Shopping cart page:
 - Everything from the base level
 - The cart should be saved in local storage.
 
 ### Advanced level:
-Drug stores page:
+
+#### Drug stores page:
 - Everything from the middle level
-Shopping cart page:
+
+#### Shopping cart page:
 
 ![image](https://github.com/VasylynaKolodiy/medicineDelivery/assets/106997950/9e18b312-9b27-4dc5-8d41-fb07222609a8)
 
@@ -86,13 +89,14 @@ address and show it will be shown on the map
 - *(extra) ask to enter a captcha after clicking on the “Create order” button
 
 ### Additional ideas for your inspiration:
-Orders history page:
+
+#### Orders history page:
 
 ![image](https://github.com/VasylynaKolodiy/medicineDelivery/assets/106997950/9cd8b98d-37da-48ce-8604-a9ca1d39096a)
 
 users can find their orders on this page using their email and phone number, ororder id
 
-Coupons page:
+#### Coupons page:
 
 ![image](https://github.com/VasylynaKolodiy/medicineDelivery/assets/106997950/66dfd7cd-6106-4889-a304-a5c1786b9925)
 
