@@ -53,8 +53,7 @@ const Basket = () => {
   const onHandleChange = (e) => {
     setState({...state, [e.target.name]: e.target.value});
   }
-
-
+  
   return (
     <div className='basket'>
       <ValidatorForm className='basket__form form' onSubmit={handleOrderBasket}>

@@ -13,6 +13,8 @@ const Header = () => {
             <Link className='logo' to="/">Shop</Link>
             <span> | </span>
             <Link className='logo' to="/basket">Basket</Link>
+            <span> | </span>
+            <Link className='logo' to="/history">History</Link>
           </Toolbar>
         </Container>
       </AppBar>

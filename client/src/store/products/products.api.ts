@@ -40,12 +40,18 @@ export const productsApi = createApi({
         method: 'POST',
         body
       }),
-    })
+    }),
+    getOrders: build.query({
+      query: ({email}) => ({
+        url: `/orders?${email ? `email=${email}` : ''}`
+      }),
+    }),
   })
 })
 export const {
   useGetProductsQuery,
   useGetCategoriesQuery,
+  useGetOrdersQuery,
   useFilterProductsByCategoryQuery,
   useSaveOrderMutation
 } = productsApi

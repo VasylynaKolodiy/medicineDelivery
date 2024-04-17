@@ -1,6 +1,7 @@
 const {Schema, model} = require('mongoose');
 
 const userSchema = new Schema({
+  _id: String,
   name: String,
   email: String,
   phone: Number,
@@ -18,7 +19,7 @@ export const productSchema = new Schema({
 });
 
 const Order = new Schema({
-  user: {type: {userSchema}},
+  user: {type: userSchema},
   products: {type: [productSchema]},
   total: Number
 });

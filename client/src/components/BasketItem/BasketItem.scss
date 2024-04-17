@@ -89,7 +89,7 @@
 
   &__minus:disabled{
     & svg path{
-      fill: rgba(darkgray, 0.7);
+      fill: rgba(25, 118, 210, 0.7);
     }
   }
 
@@ -100,7 +100,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(darkgray, 0.3);
+      background-color: rgba(25, 118, 210, 0.2);
     }
   }
 

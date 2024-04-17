@@ -10,7 +10,6 @@ interface IProductList {
 }
 
 const ProductsList: FC<IProductList>  = ({productsState, setCatName, setPageNumber}) => {
-  console.log(productsState, 'productsState')
   return (
     <section className='productsList'>
       {productsState.length > 0
