@@ -43,7 +43,7 @@ const ProductCard: FC<IProductCardProps> = ({product, setCatName, setPageNumber}
 
         {!basket.hasOwnProperty(product._id)
           ? (<Button
-            className='productPage__buyButton'
+            className='product__buyButton'
             variant="outlined"
             onClick={handleAddToBasket}
           >
