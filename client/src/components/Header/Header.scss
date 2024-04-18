@@ -5,13 +5,12 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+  background-color: white;
   z-index: 10;
 
   & header{
     box-shadow: none;
   }
-
-
 
   &.container{
     padding: 0 75px;
