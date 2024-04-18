@@ -50,7 +50,7 @@ const BasketItem: React.FC<IBasketItemProps> = ({product, handleCalculateCount, 
               </Button>
             </div>
             <div className="basketItem__price">
-              {(product.price * product.quantity).toLocaleString('en')}$
+              {(product.price * product.quantity).toLocaleString('en')}₴
             </div>
             <div className="basketItem__bin" onClick={() => handleRemoveFromBasket(product._id)}>
               <BinIcon/>

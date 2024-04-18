@@ -47,7 +47,6 @@
 
     &:hover {
       background-color: rgba(25, 118, 210, 0.2);
-      color: white;
       box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 
       .sidebar__edit {
@@ -62,7 +61,6 @@
 
   &__category.active {
     background-color: rgba(25, 118, 210, 0.2);
-    color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 
     .sidebar__edit {

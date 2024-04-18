@@ -7,7 +7,6 @@ import {useAppSelector} from "../../hooks/redux";
 import InBasketIcon from "../../assets/basket-order.svg?react";
 import {useActions} from "../../hooks/actions";
 
-
 interface IProductCardProps {
   product: IProduct,
   setCatName: (name: string) => void,
@@ -39,7 +38,7 @@ const ProductCard: FC<IProductCardProps> = ({product, setCatName, setPageNumber}
       <div className='productCard__inner'>
         <div className='productCard__info'>
           <div className='productCard__title'>{product.title}</div>
-          <div className='productCard__price'>{product.price.toLocaleString('en')}$</div>
+          <div className='productCard__price'>{product.price.toLocaleString('en')}₴</div>
         </div>
 
         {!basket.hasOwnProperty(product._id)

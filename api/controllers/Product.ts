@@ -20,6 +20,22 @@ const getProducts = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
+const getProductById = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const productId = req.params.id;
+    const product = await Product.findById(productId);
+    if (!product) {
+      res.status(404).json({ message: 'Product not found' });
+      return;
+    }
+    res.status(200).json(product);
+  } catch (e) {
+    console.error('Error getting product by ID:', e);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
 module.exports = {
   getProducts,
+  getProductById,
 };

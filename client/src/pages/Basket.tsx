@@ -125,7 +125,7 @@ const Basket = () => {
       </div>
       <div className='dialogBasket__order'>
         <div className='dialogBasket__totalPrice'>
-          Total price: {totalPrice?.toLocaleString('en')}$
+          Total price: {totalPrice?.toLocaleString('en')}₴
         </div>
 
         <Button
