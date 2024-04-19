@@ -17,7 +17,10 @@
     width: 100%;
   }
 
-  &__sort{
+  &__inputs{
+    display: flex;
+    align-items: center;
+    gap: 24px;
     margin-bottom: 24px;
   }
 

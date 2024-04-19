@@ -2,8 +2,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {IOrder, IProduct} from "../../models/Interfaces";
 import { LIMIT } from '../../constants'
 
-type FetchBaseQueryMeta = { request: Request; response?: Response }
-
 const API_URL: string = import.meta.env.VITE_API_BASE_URL;
 
 export const productsApi = createApi({

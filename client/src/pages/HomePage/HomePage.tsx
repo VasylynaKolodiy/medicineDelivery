@@ -12,9 +12,16 @@ import { Autocomplete, TextField } from "@mui/material";
 
 const HomePage = () => {
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const [catName, setCatName] = useState('')
+  const [catName, setCatName] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const { isFetching, data: products } = useFilterProductsByCategoryQuery({ catName: catName, pageNumber: pageNumber });
-  const filteredProducts = products?.data || [];
+  let filteredProducts = products?.data || [];
+
+  if (searchQuery) {
+    filteredProducts = filteredProducts.filter(product =>
+        product.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
 
   const TOTAL_COUNT = products?.totalCount || 0;
   let countOfPages = TOTAL_COUNT && Math.ceil(Number(TOTAL_COUNT) / LIMIT);
@@ -54,17 +61,29 @@ const HomePage = () => {
               <h2>Loading...</h2>
           ) : (
               <div className='homePage__list'>
-                <div className='homePage__sort'>
-                  <Autocomplete
-                      disablePortal
-                      id="sort"
-                      options={sortingOptions}
-                      onChange={handleSortChange}
-                      value={selectedOption}
-                      getOptionLabel={(option) => option.label}
-                      sx={{ width: 300 }}
-                      renderInput={(params) => <TextField {...params} label="Sort by..." />}
-                  />
+                <div className='homePage__inputs'>
+                  <div className='homePage__search'>
+                    <TextField
+                        id="search"
+                        label="Search"
+                        variant="outlined"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </div>
+
+                  <div className='homePage__sort'>
+                    <Autocomplete
+                        disablePortal
+                        id="sort"
+                        options={sortingOptions}
+                        onChange={handleSortChange}
+                        value={selectedOption}
+                        getOptionLabel={(option) => option.label}
+                        sx={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} label="Sort by..." />}
+                    />
+                  </div>
                 </div>
 
                 <ProductsList
@@ -73,7 +92,7 @@ const HomePage = () => {
                     setPageNumber={setPageNumber}
                 />
 
-                {countOfPages > 1 && (
+                {countOfPages && (
                     <Pagination
                         className='pagination'
                         count={Number(countOfPages)}
