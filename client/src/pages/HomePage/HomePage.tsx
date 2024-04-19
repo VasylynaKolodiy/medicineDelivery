@@ -15,6 +15,7 @@ const HomePage = () => {
   const [catName, setCatName] = useState('')
   const { isFetching, data: products } = useFilterProductsByCategoryQuery({ catName: catName, pageNumber: pageNumber });
   const filteredProducts = products?.data || [];
+
   const TOTAL_COUNT = products?.totalCount || 0;
   let countOfPages = TOTAL_COUNT && Math.ceil(Number(TOTAL_COUNT) / LIMIT);
   const { data: categories = [] } = useGetCategoriesQuery(null, { refetchOnMountOrArgChange: true });
@@ -34,10 +35,9 @@ const HomePage = () => {
       return a.title.localeCompare(b.title);
     } else if (selectedOption?.name === 'price') {
       return a.price - b.price;
-    } else if (selectedOption?.name === 'dateAdded') {
-      return filteredProducts;
+    } else {
+      return 0;
     }
-    return 0;
   });
 
   return (

@@ -18,7 +18,7 @@ const SidebarCategories: FC<ISidebarCategories> = ({categories, catName, setCatN
 
   return (
     <aside className='sidebar'>
-      <h4 className='sidebar__title'>Categories:</h4>
+      <h4 className='sidebar__title'>Shops:</h4>
       {categories.map((category) =>
         <div
           className={`sidebar__category ${catName === category.name ? 'active' : ''}`}

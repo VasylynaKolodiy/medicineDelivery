@@ -11,9 +11,16 @@ const getProducts = async (req: Request, res: Response): Promise<void> => {
   try {
     const queryParamsUnknown = req.query as unknown;
     const queryParams = queryParamsUnknown as QueryParams;
-    const { page, limit, shop } = queryParams;
-    const response = await Product.find(shop ? {shop} : {});
-    res.status(200).json(response);
+    const { page = 1, limit = 10, shop } = queryParams;
+    const filter = shop ? { shop } : {};
+    const totalCount = await Product.countDocuments(filter);
+
+    const skip = (page - 1) * limit;
+    const response = await Product.find(filter)
+        .limit(Number(limit))
+        .skip(skip);
+
+    res.status(200).json({ data: response, totalCount });
   } catch (e) {
     console.log(e);
     res.status(400).json({ message: 'error' });
